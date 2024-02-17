@@ -62,16 +62,6 @@ def create_chatbot_response(user_input: str):
     demo_ephemeral_chat_history.add_user_message(user_input)
 
 
-    #If you want, you can print the transformed query as follows, just uncomment the next 4 lines:
-    #Consider that this code will execute the invoke, such that this also consume resources from openAI
-    #and will generate more tokens to process.
-
-        #if len(demo_ephemeral_chat_history.messages) > 1:
-    #    query_transformed = query_transform_prompt | llm | StrOutputParser()
-    #    qry = query_transformed.invoke({"messages":demo_ephemeral_chat_history.messages})
-    #    print(f"PRINTING QUERY TRANSFORMED, CONTENT IS: {qry}")
-
-
     #If you want, you can print the tokens count from messages as follows, just uncomment the print line:
     tokens_from_messages = countTokens(str(demo_ephemeral_chat_history.messages))
     #print(f"Tokens count, MESSAGES contains: {tokens_from_messages} tokens")
@@ -126,13 +116,7 @@ def purge_messages_history(tokens_from_messages: int):
     print(f"New tokens count. | MESSAGES contains: {tokens_from_messages} tokens")
 
 def clear_history(count:int):
-    #if count = 0 clear
-    #if(count==0):
-    #    demo_ephemeral_chat_history.clear()
-    ##if count >0 just clear count messages
-    #else:
-    #    i = 0
-    #    while(i<count):
+
     demo_ephemeral_chat_history.messages.clear()
 
     return demo_ephemeral_chat_history.messages
