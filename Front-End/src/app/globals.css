@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  background: linear-gradient(to top right, #F6D7E1, #FFFFFF);
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none !important; 
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+*::-moz-scrollbar {
+  display: none;
+}
+
+*::-moz-scrollbar-thumb {
+  background-color: transparent; 
+}
+
+main {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.bot-message {
+  padding: 1rem;
+  background-color: #F491B0;
+  color: white;
+  max-width: 30rem;
+  position: relative;
+  left: 0;
+  height: fit-content;
+  overflow: hidden; 
+  word-wrap: break-word;
+  white-space: normal;
+  border-radius: 15px 15px 15px 0;
+  margin-bottom: 1rem;
+  text-align: left;
+  width: fit-content;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.user-message {
+  padding: 1rem;
+  background-color: white;
+  color: #F491B0;
+  max-width: 30rem;
+  position: relative;
+  right: 0;
+  height: fit-content;
+  overflow: hidden; 
+  word-wrap: break-word;
+  white-space: normal;
+  border-radius: 15px 15px 0 15px;
+  margin-bottom: 1rem;
+  text-align: left;
+  width: fit-content;
+  font-weight: 500;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input::placeholder {
+  color: #b1b1b1;
+}
+
+input{
+  outline: none;
+}
+
+@media screen and (max-width: 640px) {
+  input::placeholder {
+    color: #F491B0;
+  }
+}
